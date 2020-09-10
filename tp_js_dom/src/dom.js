@@ -88,11 +88,13 @@ workspace.insertBefore(bouton, h3.nextSibling)
 
 bouton.addEventListener('click', function() {
 
-  if (workspace.children[2].id == 'counter')  {
-    workspace.children[2].remove()
-    
-  }
+  for (var i = 0; i < workspace.children.length; i++) {
 
+    if (workspace.children[i].id == 'counter')  {
+      workspace.children[i].remove()
+    }
+
+  }
   
   runChrono(10)
 
