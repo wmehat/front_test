@@ -172,9 +172,9 @@ function howLongIsIt(obj) {
 		
 		
 		var obj_prop = Object.keys(obj)[i]
-	
-		console.log(obj_prop +':'+ obj[obj_prop].length);
-		 
+
+		obj[obj_prop] = obj[obj_prop].length
+		
 		
 	}
 
@@ -183,8 +183,11 @@ function howLongIsIt(obj) {
 }
 
 // Vous devriez avoir à modifier cette ligne...
-let newProduct0 = howLongIsIt(products[0]);
+
+var newProduct0 = Object.assign({}, products[0])
+howLongIsIt(newProduct0)
 console.log(products[0]);
+
 
 /* doit afficher :
 {
@@ -206,14 +209,28 @@ console.log(newProduct0);
 // Complétez votre code avec une fonction transformant tous les objets
 // compris dans le tableau passé en paramètre de la même manière que précédemment
 function howLongIsItTab(tab) {
+	
 
-	for ( var j = 0 ; j < tab.length; j++)	{
-		howLongIsIt(tab[j])
+	for ( var j = 0 ; j < Object.keys(tab).length; j++)	{
+
+		
+		for (var i = 0; i < Object.keys(tab[j]).length ; i++)	{
+		
+		
+			var obj_prop = Object.keys(tab[j])[i]
+	
+			tab[j][obj_prop] = tab[j][obj_prop].length
+			
+			
+		}
 	}
 	
 }
 
 // Vous devriez avoir à modifier cette ligne...
-let newProducts = howLongIsItTab(products);
+
+
+var newProducts = Object.assign({}, products)
+howLongIsItTab(newProducts)
 console.log(products);
 console.log(newProducts);
