@@ -211,18 +211,15 @@ console.log(newProduct0);
 function howLongIsItTab(tab) {
 	
 
-	for ( var j = 0 ; j < Object.keys(tab).length; j++)	{
+	for ( let product of tab)	{
 
-		
-		for (var i = 0; i < Object.keys(tab[j]).length ; i++)	{
-		
-		
-			var obj_prop = Object.keys(tab[j])[i]
-	
-			tab[j][obj_prop] = tab[j][obj_prop].length
-			
-			
+		for ( let prop in product)	{
+
+			product[prop] = product[prop].replaceAll(' ', '').length
+
 		}
+		
+			
 	}
 	
 }
@@ -230,7 +227,7 @@ function howLongIsItTab(tab) {
 // Vous devriez avoir à modifier cette ligne...
 
 
-var newProducts = Object.assign({}, products)
-howLongIsItTab(newProducts)
+let newProducts = products.map(e => Object.assign({}, e));
+newProducts = howLongIsItTab(newProducts)
 console.log(products);
 console.log(newProducts);

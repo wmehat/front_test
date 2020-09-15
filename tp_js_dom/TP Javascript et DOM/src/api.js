@@ -20,6 +20,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
         return;
       }
 
+      console.log(response.length);
+      
+
       response.json().then(function(data) {
         console.log(data);
 

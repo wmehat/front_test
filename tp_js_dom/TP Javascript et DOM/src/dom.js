@@ -52,11 +52,9 @@ function runChrono(n) {
   div.setAttribute('id', 'counter')
   workspace.insertBefore(div, p)
 
-
+  div.innerHTML = compteur
 
   setInterval( function() {
-
-    div.innerHTML = compteur
 
     if (compteur == 0 ) {
       return
@@ -64,7 +62,7 @@ function runChrono(n) {
 
     compteur -= 1
 
-
+    div.innerHTML = compteur
 
   }, 1000) 
 
